@@ -1,3 +1,6 @@
+// Code version
+window.siteVersion=20161222195500;
+
 // Define obconsole angular module.
 var app = angular.module('thswebsite', [
   'ngRoute'
