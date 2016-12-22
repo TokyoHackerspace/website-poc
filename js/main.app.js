@@ -32,8 +32,6 @@ app.controller("RootController", ['$window','$location','Meetup', function($wind
         {
           self.events.push(val);
         });
-
-        console.log(response);
       }, function error(error)
       {
         console.log(error);
