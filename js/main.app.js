@@ -42,7 +42,7 @@ app.controller("RootController", ['$window','$location','Meetup', function($wind
   
 }]);
 
-app.factory('Meetup', function ($http) {
+app.factory('Meetup',['$http','$sce', function ($http, $sce) {
   var events = [];
 
   return {
@@ -57,6 +57,7 @@ app.factory('Meetup', function ($http) {
             {
               response.data.forEach(function(val, idx)
               {
+                $sce.trustAsHtml(val.description);
                 events.push(val);
               });
 
@@ -75,6 +76,6 @@ app.factory('Meetup', function ($http) {
       };
     },
   }
-});
+}]);
 
 
