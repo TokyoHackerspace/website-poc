@@ -37,14 +37,16 @@ app.controller("RootController", ['$scope', '$window','$location','Meetup', func
       self.languageLinks.ja.url = self.languageLinks.ja.base + pathSuffix;
     }
     
+    console.log(self.originalPath);
+    
     // Redirect to the right language website
     if(self.originalPath == "/")
     {
       if(self.lang == 'ja-JP')
       {
-        baseUrlPath='ja';
+        self.baseUrlPath='ja';
       }
-        $location.path('/' + baseUrlPath)
+        $location.path('/' + self.baseUrlPath)
     }
   });
 
