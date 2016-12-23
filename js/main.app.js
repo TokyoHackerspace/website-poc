@@ -6,26 +6,28 @@ var app = angular.module('thswebsite', [
   'ngRoute'
 ]);
 
-app.controller("RootController", ['$window','$location','Meetup', function($window, $location, Meetup)
+app.controller("RootController", ['$scope', '$window','$location','Meetup', function($scope, $window, $location, Meetup)
 {
   self = this;
   self.lang = $window.navigator.language || $window.navigator.userLanguage;
   self.events = [];
-
-  if($location.path() == "/")
+  
+  $scope.$on('$routeChangeStart', function (e, next, current)
   {
-    if(self.lang == 'ja-JP')
+    if(next.$$route.originalPath == "/")
     {
-      console.log("Redirecting to Japanese website");
-      $location.path('/ja')
+      if(self.lang == 'ja-JP')
+      {
+        console.log("Redirecting to Japanese website");
+        $location.path('/ja')
+      }
+      else
+      {
+        console.log("Redirecting to English website");
+        $location.path('/en')
+      }
     }
-    else
-    {
-      console.log("Redirecting to English website");
-      $location.path('/en')
-    }
-  }
-
+  });
 
   self.getEvents = function()
   {
