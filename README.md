@@ -1,0 +1,1 @@
+This code is a proof of concept of moving the THS website away from a 100% php/database driven website to a 90% static HTML/AngularJS and a 10% php website use to leverage the meetup's event API so we can manage all events via meetup instead of managing events in 2-3 different places.
