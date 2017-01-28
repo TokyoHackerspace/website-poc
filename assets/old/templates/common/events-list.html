@@ -1,0 +1,9 @@
+<br><br>
+
+<div ng-repeat="event in rootCtrl.events">
+  <h2>{{ event.name }}</h2>
+  <p><strong>Time</strong>: {{ event.time | date:'medium' }}</p>
+  {{ event.description }}
+</div>
+  
+
