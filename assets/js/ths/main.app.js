@@ -16,9 +16,11 @@ var app = angular.module('thswebsite', [
 app.controller("RootController", ['$scope', '$window','$location', function($scope, $window, $location)
 {
   self = this;
-  self.pathLang = "en";
   self.lang = $window.navigator.language || $window.navigator.userLanguage;
+  self.pathLang = "en";
   self.events = [];
+  
+  console.log("One: " + self.pathLang);
 
   self.languageLinks = {
     en: {
@@ -34,28 +36,23 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
   // When we change a route we're going to do some work.
   $scope.$on('$routeChangeStart', function (e, next, current)
   {
-    // Get the original path
+
     self.originalPath = next.$$route.originalPath;
 
-    console.log(self.pathLang);
-    
-    // Redirect to the right language website
+    console.log(self.originalPath);
+
     if(self.originalPath == "" || self.originalPath == "/")
     {
-      if(self.lang == 'ja-JP')
-      {
-        self.pathLang='ja';
-      }
-
-
-      var pathUrl = '/' + self.pathLang;
-
-      // Redirect based on the baseUrlPath
-      $location.path(pathUrl);
+       if(self.lang == 'ja-JP')
+       {
+         self.pathLang='ja';
+       }
+       
+       $location.path('/' + pathUrl);
     }
     else
     {
-      self.pathLang = self.originalPath.substring(3);
+        self.pathLang = self.originalPath.substring(1,3);
     }
   });
 
