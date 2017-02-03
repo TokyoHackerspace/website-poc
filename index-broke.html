@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="thswebsite" ng-controller="RootController as rootCtrl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Tokyo HackerSpace | Don't Try This At Home, That's What The Hackerspace is For!</title>
+
+  <!-- Bootstrap & Other CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Yantramanav:300,400,700" rel="stylesheet">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/style.min.css" rel="stylesheet">
+  <link href="assets/css/firefox.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="h-style-2">
+        
+    <!-- Sidebar Menu for Desktop and Mobile
+    ============================================= -->
+    <div class="menu-wrap nicescroll">
+        <nav class="menu">
+            <!-- Menu for Tablet and Desktop
+            ============================================= -->
+            <aside class="widget widget-categories hidden-xs hidden-sm">
+                <div class="widget-title-wrap">
+                    <h6 class="widget-title">Categories</h6><!-- widget-title -->
+                </div><!-- widget-title-wrap -->
+                <ul class="list-unstyled">
+                    <li><a href="#">Google<span class="cat-posts">42</span></a></li>
+                    <li><a href="#">Tech News<span class="cat-posts">41</span></a></li>
+                    <li><a href="#">Social Media<span class="cat-posts">28</span></a></li>
+                    <li><a href="#">Web Browsers<span class="cat-posts">23</span></a></li>
+                    <li><a href="#">Mobile Phones<span class="cat-posts">22</span></a></li>
+                    <li><a href="#">Release<span class="cat-posts">19</span></a></li>
+                    <li><a href="#">iPhone<span class="cat-posts">17</span></a></li>
+                    <li><a href="#">Microsoft<span class="cat-posts">16</span></a></li>
+                    <li><a href="#">Business<span class="cat-posts">15</span></a></li>
+                    <li><a href="#">Mobile Phones<span class="cat-posts">22</span></a></li>
+                    <li><a href="#">Release<span class="cat-posts">19</span></a></li>
+                    <li><a href="#">iPhone<span class="cat-posts">17</span></a></li>
+                    <li><a href="#">Microsoft<span class="cat-posts">16</span></a></li>
+                    <li><a href="#">Business<span class="cat-posts">15</span></a></li>
+                </ul><!-- list-unstyled -->
+            </aside><!-- widget-categories -->
+
+            <!-- Menu for Mobile
+            ============================================= -->
+            <aside class="side-menu visible-xs visible-sm">
+                <ul class="list-unstyled">
+                    <li class="menu-item current-menu-item menu-item-1">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item menu-item-22">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="menu-item menu-item-2">
+                        <a href="category.html">Category</a>
+                    </li>
+                    <li class="menu-item menu-item-3">
+                        <a href="single.html">Pages</a>
+                    </li>
+                    <li><a href="404.html">404 Page</a></li>
+                    <li class="menu-item menu-item-4">
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul><!-- list-unstyled -->
+            </aside><!-- side-menu -->
+        </nav><!-- menu -->
+        <button class="close-button hidden-xs" id="close-button">Close Menu</button>
+    </div><!-- menu-wrap -->
+    <!-- Main Header Navigation Style 2
+    ============================================= -->
+    <div id="site-header" class="header-style-2">
+        <div class="nav-pages-social hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+
+                        <!-- Primary Navigation
+                        ============================================= -->
+                        <ul class="nav navbar-nav">
+                    <li class="menu-item current-menu-item menu-item-1">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="menu-item menu-item-22">
+                        <a href="about.html">Access</a>
+                    </li>
+                    <li class="menu-item menu-item-2">
+                        <a href="category.html">Category</a>
+                    </li>
+                    <li class="menu-item menu-item-3">
+                        <a href="single.html">Pages</a>
+                    </li>
+                    <li><a href="404.html">404 Page</a></li>
+                    <li class="menu-item menu-item-4">
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                        </ul><!-- navbar-nav -->
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav navbar-nav menu-right">
+
+                            <!-- Social Icons
+                            ============================================= -->
+                            <li class="social-nav"><a href="https://www.facebook.com/groups/86614272223/"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/tkohackerspace"><i class="fa fa-twitter"></i></a><!-- <a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-linkedin"></i></a>--></li>
+
+                            <!-- Language Bar
+                            ============================================= -->
+                            <li class="meny-item">
+                              <a href="#">English</a>
+                            </li><!-- language-nav -->
+                            <li class="meny-item">
+                              <a href="#">Japanese</a>
+                            </li><!-- language-nav -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- nav-pages-social -->
+        <div class="logo-advert">
+            <div class="container ">
+                <div class="row">
+                    <div class="row-table-desktop">
+                        <div class="col-sm-3 col-md-4 col-lg-4 col-xs-12 col col-vm">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="toggle-categories menu-button visible-xs" id="open-button"><i class="fa fa-bars"></i><span>Menu</span></button><!-- toggle-categories -->
+                                <a class="navbar-brand" href="#"><img src="assets/svg/thslogo.svg" alt="Tokyo Hackerspace" style="width: 300px; position: relative; top: -40px"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-md-8 col-lg-8 col-xs-12 hidden-xs col col-vm text-right">
+                            
+                            <!-- 970x90 Advertisement
+                            ============================================= -->
+                            <a href="#"><img src="http://placehold.it/700x90/cecece?text=Advertisement+(700x90)" width="700" height="90" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- 
+        <div class="navigation-bar hidden-xs" data-spy="affix" data-offset-top="185">
+            <div class="container">
+                <nav class="navbar navbar-default primary-nav">
+                    <div class="row"> -->
+
+                        <!-- Secondary Navigation
+                        ============================================= -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <!-- 
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav parent-nav">
+                                <li class="menu-item"><a href="#">Fashion</a></li>
+                                <li class="menu-item current-menu-item menu-item-1"><a href="#">Lifestyle</a></li>
+                                <li class="menu-item menu-item-2"><a href="#">Entertainment</a></li>
+                                <li class="menu-item menu-item-3"><a href="#">Technology</a></li>
+                                <li class="menu-item menu-item-4"><a href="#">Sports</a></li>
+                                <li class="menu-item menu-item-5"><a href="#">Photography</a></li>
+                                <li class="menu-item menu-item-6"><a href="#">Development</a></li>
+                                <li class="menu-item menu-item-7"><a href="#">Gadgets</a></li>
+                                <li class="menu-item menu-item-8"><a href="#">Health</a></li>
+                                <li class="menu-item menu-item-9"><a href="#">Gallery</a></li>
+                                <li class="menu-item menu-item-10"><a href="#">Videos</a></li>
+                                <li class="menu-item menu-item-has-children menu-item-11">
+                                    <a href="#">More <i class="fa fa-angle-down"></i></a>
+                                    <div class="sub-menu-wrap is-sub-menu">
+                                        <ul class="sub-menu">
+                                            <li class="menu-item"><a href="#">Category 1</a></li>
+                                            <li class="menu-item"><a href="#">Category 2</a></li>
+                                            <li class="menu-item"><a href="#">Category 3</a></li>
+                                            <li class="menu-item"><a href="#">Category 4</a></li>
+                                            <li class="menu-item"><a href="#">Category 5</a></li>
+                                            <li class="menu-item"><a href="#">Category 6</a></li>
+                                            <li class="menu-item"><a href="#">Category 7</a></li>
+                                            <li class="menu-item"><a href="#">Category 8</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> --> <!-- navbar-collapse -->
+                    <!-- </div>
+                </nav>
+            </div>
+        </div> -->
+    </div>
+
+    <div class="regular-blog-wrap featured-posts-thumbnails">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-12" style="text-align: left;">
+                <p>Tokyo Hackerspace is a collective of like minded people from around the world who have come together to share our knowledge with each other.  This is accomplished by attending events, holding classes and working on projects together.  Our members come from all walks of life. Whether you're single, or married, Artist, or software enginer, if you're a native of Japan or an expact from a land far away you will be welcomed at Tokyo Hackerspace.</p>
+
+                <p>If you are interested in learning more about what Tokyo Hackerspace has to offer you can start by following @tkohackerspace on Twitter, joining the Facebook TokyoHackerSpace Group, and joining the TokyoHackerSpace Google Group.</p>
+                &nbsp;
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post">
+                                <div class="post-thumbnails large-regular-post wow flipInY">
+                                    <div class="ribbon">Upcoming Events</div><!-- ribbon -->
+                                    <div class="post-icon-type"><i class="fa fa-video-camera"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x373" width="570" height="373" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-picture-o"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-commenting"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-object-group"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-quote-left"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-certificate"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-picture-o"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInX">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-picture-o"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Regular Post
+                            ============================================= -->
+                            <div class="regular-post small-regular-post wow flipInXn">
+                                <div class="post-thumbnails">
+                                    <div class="post-icon-type"><i class="fa fa-object-group"></i></div><!-- post-icon-type -->
+                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <div class="post-info">
+                                        <p>By <a href="#">Administrator</a></p>
+                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <ul class="entry-meta list-inline">
+                                            <li>18 July 2016</li>
+                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                            <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                        </ul><!-- entry-meta -->
+                                    </div><!-- post-info -->
+                                </div><!-- post-thumbnails -->
+                            </div><!-- regular-post -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'./assets/templates/english/footer.html'"></div>
+
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <div class="title"></div>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/blueimp/blueimp-helper.js"></script>
+    <script src="assets/js/blueimp/blueimp-gallery.js"></script>
+    <script src="assets/js/blueimp/blueimp-gallery-fullscreen.js"></script>
+    <script src="assets/js/blueimp/blueimp-gallery-indicator.js"></script>
+    <!--script src="assets/js/blueimp/blueimp-gallery-video.js"></script>
+    <script src="assets/js/blueimp/blueimp-gallery-vimeo.js"></script>
+    <script src="assets/js/blueimp/blueimp-gallery-youtube.js"></script-->
+    <script src="assets/js/blueimp/jquery.blueimp-gallery.js"></script>
+    <script src="assets/js/vendors.min.js"></script>
+    <script src="assets/js/progressbar.js"></script>
+    <script src="assets/js/jqm.js"></script>
+    <script src="assets/js/woo.js"></script>
+    <script src="assets/js/custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/ths/main.app.js?version=20161222200600"></script>
+    <script type="text/javascript" src="assets/js/ths/routes.app.js?version=20161222200600"></script>
+
+</body>
+</html>

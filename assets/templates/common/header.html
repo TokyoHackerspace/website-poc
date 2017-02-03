@@ -1,0 +1,41 @@
+   {{ rootCtrl.baseUrlPath  }}
+   
+    <div id="site-header" class="header-style-2">
+        <div class="nav-pages-social hidden-xs">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div ng-include="'/assets/templates/' + rootCtrl.pathLang + '/common/navigation.html'"></div>
+              </div>
+              <div class="col-md-6">
+                <ul class="nav navbar-nav menu-right">
+                  <li class="social-nav" ng-include="'/assets/templates/common/social_links.html'">
+                  </li>
+                  <li class="search-nav menu-item-has-children">
+                    <div ng-include="'/assets/templates/common/lang_selector.html'"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="logo-advert">
+          <div class="container ">
+            <div class="row">
+              <div class="row-table-desktop">
+                <div class="col-sm-3 col-md-4 col-lg-4 col-xs-12 col col-vm">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="toggle-categories menu-button visible-xs" id="open-button"><i class="fa fa-bars"></i><span>Menu</span></button><!-- toggle-categories -->
+                    <a class="navbar-brand" href="#"><img src="assets/svg/thslogo.svg" alt="Tokyo Hackerspace" style="width: 300px; position: relative; top: -40px"></a>
+                  </div>
+                </div>
+                <div class="col-sm-9 col-md-8 col-lg-8 col-xs-12 hidden-xs col col-vm text-right">
+                  <a href="#"><img src="http://placehold.it/700x90/cecece?text=Advertisement+(700x90)" width="700" height="90" alt="advertisement 700x90"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
