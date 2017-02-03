@@ -37,13 +37,16 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
     // Get the original path
     self.originalPath = next.$$route.originalPath;
 
+    console.log(self.pathLang);
+    
     // Redirect to the right language website
-    if(self.originalPath == "/")
+    if(self.originalPath == "" || self.originalPath == "/")
     {
       if(self.lang == 'ja-JP')
       {
         self.pathLang='ja';
       }
+
 
       var pathUrl = '/' + self.pathLang;
 
