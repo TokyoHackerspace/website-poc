@@ -48,7 +48,7 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
          self.pathLang='ja';
        }
        
-       $location.path('/' + pathUrl);
+       $location.path('/' + self.pathLang);
     }
     else
     {

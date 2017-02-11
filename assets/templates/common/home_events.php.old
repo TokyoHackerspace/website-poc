@@ -1,3 +1,14 @@
+<?php
+  require_once('../../../events/eventsLib.php');
+  // foreach($events as $event)
+  // {
+  //   include('event_template.php');
+  // }
+
+  
+?>
+
+
     <div class="regular-blog-wrap featured-posts-thumbnails">
         <div class="container">
             <div class="row">
@@ -6,23 +17,35 @@
                         <div class="col-sm-12">
                             <!-- Regular Post
                             ============================================= -->
+                              
+
+                            <?php 
+                            
+                              print_r($events[0]);
+                              $featuredEvent = $events[0]; 
+                            
+                            ?>
+                            
                             <div class="regular-post">
                                 <div class="post-thumbnails large-regular-post wow flipInY">
                                     <div class="ribbon">Upcoming Events</div><!-- ribbon -->
-                                    <div class="post-icon-type"><i class="fa fa-video-camera"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x373" width="570" height="373" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <!-- div class="post-icon-type"><i class="fa fa-video-camera"></i></div --><!-- post-icon-type -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="373" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
-                                        <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
+                                        <h2 class="entry-title"><a href="#"><?php echo $featuredEvent['name']; ?></a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
-                                            <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li>{{ <?php echo $featuredEvent['time']; ?> |  date:'dd MMMM yyyy @ h:mma' }}</li>
+                                            <li><i class="fa fa-meetup" aria-hidden="true"></i> <?php echo $featuredEvent['yes_rsvp_count'] ?></li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
                                     </div><!-- post-info -->
                                 </div><!-- post-thumbnails -->
                             </div><!-- regular-post -->
+                            
+                            
+                            
+                            
                         </div>
 
                         <div class="col-sm-6">
@@ -31,13 +54,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-picture-o"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -51,13 +73,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-commenting"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -75,13 +96,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-object-group"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -95,13 +115,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-quote-left"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -115,13 +134,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-certificate"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -135,13 +153,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-picture-o"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -155,13 +172,12 @@
                             <div class="regular-post small-regular-post wow flipInX">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-picture-o"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
@@ -175,13 +191,12 @@
                             <div class="regular-post small-regular-post wow flipInXn">
                                 <div class="post-thumbnails">
                                     <div class="post-icon-type"><i class="fa fa-object-group"></i></div><!-- post-icon-type -->
-                                    <a href="#"><img src="http://placehold.it/570x370" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                    <a href="#"><img src="/events/images/event_image.jpg" width="570" height="370" alt="" class="img-responsive"></a><!-- img-responsive -->
                                     <div class="post-info">
-                                        <p>By <a href="#">Administrator</a></p>
                                         <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-content -->
                                         <ul class="entry-meta list-inline">
                                             <li>18 July 2016</li>
-                                            <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                            <li><i class="fa fa-meetup"></i> 13</li><!-- fa-heart-o -->
                                             <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
                                             <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
                                         </ul><!-- entry-meta -->
