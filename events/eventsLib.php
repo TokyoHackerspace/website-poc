@@ -13,7 +13,7 @@ try
 {
   $cache_file = BASEPATH . '/events/cache/cache_file.txt';
 
-  if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 5 ))) {
+  if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 60 * 24 ))) {
      // Cache file is less than five minutes old. 
      // Don't bother refreshing, just use the file as-is.
      $file = file_get_contents($cache_file);

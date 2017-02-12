@@ -1,3 +1,4 @@
 /vendor
 /events/config.php
 /events/images
+/events/cache/*
