@@ -1,0 +1,23 @@
+.navbar-brand > img {
+  width: 300px;
+  position: relative;
+  top: -40px
+}
+
+
+@media screen and (max-width: 400px){
+  .navbar-brand > img {
+    width: 200px;
+    position: relative;
+    top: -25px;
+    left: 60px;
+  }
+
+  .rsvp-widget {
+    float: none;
+  }
+
+  .rsvp-widget ul {
+    list-style-type: none;
+  }
+}

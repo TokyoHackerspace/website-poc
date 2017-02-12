@@ -8280,16 +8280,6 @@ html[xmlns] .flexslider .slides {
   }
 }
 
-@media screen and (max-width: 400px){
-  .rsvp-widget {
-    float: none;
-  }
-
-  .rsvp-widget ul {
-    list-style-type: none;
-  }
-}
-
 @media (max-width: 320px) {
   .menu-wrap {
     width: 320px;

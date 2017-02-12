@@ -2,3 +2,4 @@
 /events/config.php
 /events/images
 /events/cache/*
+/events/temp
