@@ -2,19 +2,15 @@
   
   require_once('eventsLib.php');
   
-  foreach($events as $event)
+  // Find our events.
+  foreach($events as $idx => $event)
   {
     if($event['id'] == $_REQUEST['eventId'])
     {
       break;
     }
   }
-
-  // print_r($event);
-
-  
-?>
-
+  ?>
     <div class="invert-bg-light regular-blog-wrap category-cardview">
         <div class="container">
             <div class="row">
@@ -27,85 +23,69 @@
                     
                             <!-- Heading
                             ============================================= -->
-                            <div class="section-heading"><h2 class="mh"><?php echo $event['name']; ?></h2></div>
+                            <div class="section-heading">
+                              <h2 class="mh"><?php echo $event['name']; ?></h2>
+                            </div>
                     
                             <!-- Description
                             ============================================= -->
                             <div class="single-entry-content hidden-xs">
+                              <div style="float: right;">
+                                <ul style="list-style-type: none;">
+                                  <li>
+                                    <strong>When?</strong><br>
+                                    <?php echo meetupTimeToString("l F dS, Y", $event['time'], $event['utc_offset']); ?></li>
+                                  <li>
+                                    <br>
+                                    <strong>Where?</strong><br>
+                                    <?php echo meetupVenu($event['venue']); ?>
+                                  </li>
+                                  <li>
+                                    <br>
+                                    <a href="https://www.meetup.com/TokyoHackerSpace/events/<?php echo $event['id']; ?>/" class="btn btn-light-brown" style="color: #fff;"><i class="fa fa-meetup"></i> RSVP on Meetup!</a></li>
+                                </ul>
+                              </div>
                               <?php echo $event['description']; ?>
-                                <hr>
+                              <!-- the clear is here so the text wraps around the RSVP widget but gets cleared afterwards -->
+                              <div style="clear: both;"></div>
+                              <hr>
                             </div>
                         </div>
-
-                        <div class="col-sm-4 col">
-                    
-                            <!-- CardView Post
-                            ============================================= -->
-                            <div class="cardview-post wow zoomIn">
-                                <div class="post-thumbnails">
-                                    <a href="#"><img src="http://placehold.it/290x203" width="290" height="203" alt="" class="img-responsive"></a><!-- img-responsive -->
-                                    <div class="post-category-block"><a href="#">Photography</a> <a href="#">Business</a></div><!-- post-category-block -->
-                                </div><!-- post-thumbnails -->
-                                <div class="post-info">
-                                    <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-title -->
-                                    <ul class="entry-meta list-inline">
-                                        <li>18 July 2016</li>
-                                        <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
-                                        <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
-                                        <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
-                                    </ul><!-- entry-meta -->
-                                </div><!-- post-info -->
-                            </div><!-- cardview-post -->
-                        </div>
-                        <div class="col-sm-4 col">
-                    
-                            <!-- CardView Post
-                            ============================================= -->
-                            <div class="cardview-post wow zoomIn">
-                                <div class="post-thumbnails">
-                                    <a href="#"><img src="http://placehold.it/290x203" width="290" height="203" alt="" class="img-responsive"></a><!-- img-responsive -->
-                                    <div class="post-category-block"><a href="#">Business</a></div><!-- post-category-block -->
-                                </div><!-- post-thumbnails -->
-                                <div class="post-info">
-                                    <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-title -->
-                                    <ul class="entry-meta list-inline">
-                                        <li>18 July 2016</li>
-                                        <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
-                                        <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
-                                        <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
-                                    </ul><!-- entry-meta -->
-                                </div><!-- post-info -->
-                            </div><!-- cardview-post -->
-                        </div>
-                        <div class="col-sm-4 col">
-                    
-                            <!-- CardView Post
-                            ============================================= -->
-                            <div class="cardview-post wow zoomIn">
-                                <div class="post-thumbnails">
-                                    <a href="#"><img src="http://placehold.it/290x203" width="290" height="203" alt="" class="img-responsive"></a><!-- img-responsive -->
-                                    <div class="post-category-block"><a href="#">Photography</a></div><!-- post-category-block -->
-                                </div><!-- post-thumbnails -->
-                                <div class="post-info">
-                                    <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-title -->
-                                    <ul class="entry-meta list-inline">
-                                        <li>18 July 2016</li>
-                                        <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
-                                        <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
-                                        <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
-                                    </ul><!-- entry-meta -->
-                                </div><!-- post-info -->
-                            </div><!-- cardview-post -->
-                        </div>
-
-          
                         
+                        <!-- pre>
+                        <?php // print_r($event); ?>
+                        </pre -->
+
+                       
+                        <?php // Next 3 events advertised below 
+                        for($i = ($idx+1); $i < ($idx+4); $i++): ?>
+                        <div class="col-sm-4 col">
+
+                            <!-- CardView Post
+                            ============================================= -->
+                            <div class="cardview-post wow zoomIn">
+                                <div class="post-thumbnails">
+                                    <a href="#"><img src="http://placehold.it/290x203" width="290" height="203" alt="" class="img-responsive"></a><!-- img-responsive -->
+                                </div><!-- post-thumbnails -->
+                                <div class="post-info">
+                                    <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-title -->
+                                    <ul class="entry-meta list-inline">
+                                        <li>18 July 2016</li>
+                                        <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
+                                        <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
+                                        <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
+                                    </ul><!-- entry-meta -->
+                                </div><!-- post-info -->
+                            </div><!-- cardview-post -->
+                        </div>
+                        <?php endfor; ?>
                     </div>
                 </div>
 
                 
                 <!-- sidebar starts here -->
                 <div class="col-lg-3 col-md-3 col-sm-4 fix-top-mobile">
+                  
                     <!-- Widget Advertisement
                     ============================================= -->
                     <aside class="widget widget-advert wow jello">

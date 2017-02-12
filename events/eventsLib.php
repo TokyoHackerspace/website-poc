@@ -52,5 +52,22 @@ catch (\Exception $e)
   echo $e->getMessage();
 }
 
+function meetupTimeToString($format, $meetupTimeStamp, $meetupOffset)
+{
+  return date($format, ($meetupTimeStamp/1000) + ($meetupOffset/1000) ); 
+}
+
+function meetupVenu($venue)
+{
+  $html = $venue['name'].'<br>';
+  $html .= $venue['address_1'].'<br>';
+  if(isset($venue['address_2']))
+  {
+    $html .= $venue['address_2'].'<br>';
+  }
+  $html .= $venue['city'].'<br>';
+  return $html;
+}
+
 
   
