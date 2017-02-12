@@ -8261,6 +8261,14 @@ html[xmlns] .flexslider .slides {
   }
 }
 
+.rsvp-widget {
+  float: right;
+}
+
+.rsvp-widget ul {
+  list-style-type: none;
+}
+
 @media (max-width: 640px) {
   .menu-wrap {
     width: 340px;
@@ -8269,6 +8277,16 @@ html[xmlns] .flexslider .slides {
     overflow: scroll !important;
     -webkit-transform: translate3d(-345px, 60px, 0);
     transform: translate3d(-345px, 60px, 0);
+  }
+}
+
+@media screen and (max-width: 400px){
+  .rsvp-widget {
+    float: none;
+  }
+
+  .rsvp-widget ul {
+    list-style-type: none;
   }
 }
 

@@ -19,8 +19,7 @@
 
                         <!-- Category Information
                         ============================================= -->
-                        <div class="col-sm-12 col">
-                    
+                        <div class="col-sm-12">
                             <!-- Heading
                             ============================================= -->
                             <div class="section-heading">
@@ -29,9 +28,9 @@
                     
                             <!-- Description
                             ============================================= -->
-                            <div class="single-entry-content hidden-xs">
-                              <div style="float: right;">
-                                <ul style="list-style-type: none;">
+                            <div class="single-entry-content">
+                              <div class="rsvp-widget">
+                                <ul>
                                   <li>
                                     <strong>When?</strong><br>
                                     <?php echo meetupTimeToString("l F dS, Y", $event['time'], $event['utc_offset']); ?></li>
@@ -42,12 +41,11 @@
                                   </li>
                                   <li>
                                     <br>
-                                    <a href="https://www.meetup.com/TokyoHackerSpace/events/<?php echo $event['id']; ?>/" class="btn btn-light-brown" style="color: #fff;"><i class="fa fa-meetup"></i> RSVP on Meetup!</a></li>
+                                    <a href="https://www.meetup.com/TokyoHackerSpace/events/<?php echo $event['id']; ?>/" class="btn btn-light-brown" style="color: #fff;" target="_blank"><i class="fa fa-meetup"></i> RSVP on Meetup!</a></li>
                                 </ul>
                               </div>
                               <?php echo $event['description']; ?>
                               <!-- the clear is here so the text wraps around the RSVP widget but gets cleared afterwards -->
-                              <div style="clear: both;"></div>
                               <hr>
                             </div>
                         </div>
