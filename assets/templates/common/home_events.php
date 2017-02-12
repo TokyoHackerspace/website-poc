@@ -1,18 +1,16 @@
 <?php
   require_once('../../../events/eventsLib.php');
   
-    $eventCount = 0;
-    
-    function get_next_event()
-    {
-      global $eventCount;
-      global $events;
-      return $events[$eventCount++];
-    }
+  $eventCount = 0;
+  
+  function get_next_event()
+  {
+    global $eventCount;
+    global $events;
+    return $events[$eventCount++];
+  }
   
 ?>
-
-
     <div class="regular-blog-wrap featured-posts-thumbnails">
       <div class="container">
         <div class="row">

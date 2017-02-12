@@ -56,28 +56,20 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
     }
   });
 
-
-  self.getEvents = function()
-  {
-    Meetup.getEvents()
-      .then(function success(response)
-      {
-        response.forEach(function(val, idx)
-        {
-          self.events.push(val);
-        });
-      }, function error(error)
-      {
-        console.log(error);
-      });
-  }
-
 }]);
 
 app.controller("FooterController", ['$scope', '$window', function($scope, $window)
 {
   var self = this;
 }]);
+
+app.controller("EventDisplayController", ['$scope', '$routeParams','$window', function($scope, $routeParams, $window)
+{
+  var self = this;
+  self.eventId = $routeParams.eventId;
+  self.eventTitle = $routeParams.eventTitle;
+}]);
+
 
 
 
