@@ -1,5 +1,5 @@
 .navbar-brand > img {
-  width: 275px;
+  width: 265px;
   position: relative;
   top: -40px;
   z-index: 1000;
@@ -8,10 +8,10 @@
 
 @media screen and (max-width: 400px){
   .navbar-brand > img {
-    width: 200px;
+    width: 170px !important;
     position: relative;
-    top: -25px;
-    left: 35px;
+    top: -18px;
+    left: 120px;
   }
 
   .rsvp-widget {
