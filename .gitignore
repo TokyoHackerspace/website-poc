@@ -3,3 +3,5 @@
 /events/images
 /events/cache/*
 /events/temp
+/assets/templates/common.old
+/index.html.old
