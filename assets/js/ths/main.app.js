@@ -7,10 +7,12 @@ $.mobile.linkBindingEnabled = false;
 $.mobile.hashListeningEnabled = false; 
 $.mobile.pushStateEnabled = false; 
 $.mobile.changePage.defaults.changeHash = false;
+window.mapContents = null;
 
 // Define obconsole angular module.
 var app = angular.module('thswebsite', [
-  'ngRoute'
+  'ngRoute',
+  'oc.lazyLoad'
 ]);
 
 app.controller("RootController", ['$scope', '$window','$location', function($scope, $window, $location)
@@ -71,42 +73,56 @@ app.controller("EventDisplayController", ['$scope', '$routeParams','$window', fu
 }]);
 
 
+app.controller('MapController',['$scope', '$document','$ocLazyLoad', function($scope, $document,$ocLazyLoad)
+{
+  // Loading the map api for google using LazyLoader.  It then calls the callback function initMap which lives outside
+  // Of angulage.
+ $ocLazyLoad.load('https://maps.googleapis.com/maps/api/js?key=AIzaSyDZDTW0XaQ3Qd3RVFtvGpiziwEQwGasEA4&callback=initMap')
+
+ if(window.mapContents != null)
+ {
+   var directionsService = new google.maps.DirectionsService;
+   var directionsDisplay = new google.maps.DirectionsRenderer;
+   
+   directionsDisplay.setMap(window.mapContents);
+   calculateAndDisplayRoute(directionsService, directionsDisplay);
+   // calculateAndDisplayRoute(directionsService, directionsDisplay);
+   // document.getElementById('map').innerHTML = ;
+   // console.log("Have map contents");
+ }
 
 
-// app.factory('Meetup',['$http','$sce', function ($http, $sce) {
-//   var events = [];
-//
-//   return {
-//     getEvents: function()
-//     {
-//       if(events.length == 0)
-//       {
-//         return $http.get('/events/meetup.php')
-//           .then(function success(response)
-//           {
-//             if (typeof response.data === 'object')
-//             {
-//               response.data.forEach(function(val, idx)
-//               {
-//                 $sce.trustAsHtml(val.description);
-//                 events.push(val);
-//               });
-//
-//               return events;
-//             }
-//             else
-//             {
-//               // something went wrong
-//               return $q.reject(response.data);
-//             }
-//           }, function error(error)
-//           {
-//             // something went wrong
-//             return $q.reject(response.data);
-//           });
-//       };
-//     },
-//   }
-// }]);
+}]);
 
 
+// This is the callback function for the Google Map API.  It must live outside of Angular.
+function initMap()
+{
+  
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 7,
+    center: {lat: 35.7562022, lng: 139.6924972, zoom: 17}
+  });
+  window.mapContents = map;
+  directionsDisplay.setMap(map);
+  
+  calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: "Nakaitabashi Station",
+    destination: "173-0021 Tokyo-to, Itabashi-ku, Yayoichō, 40−7",
+    travelMode: 'WALKING'
+  }, function(response, status) {
+    if (status === 'OK') {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+  
+}

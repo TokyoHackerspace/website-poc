@@ -36,6 +36,22 @@ app.config( ['$routeProvider', function($routeProvider)
         title: "Tokyo Hackerspace"
       }
     })
+    .when('/en/event/hosting',
+    {
+      templateUrl: '/assets/templates/en/event-hosting.html?version=' + window.siteVersion,
+      access: {
+        footer: true,
+        title: "Tokyo Hackerspace"
+      }
+    })
+    .when('/ja/event/hosting',
+    {
+      templateUrl: '/assets/templates/ja/event-hosting.html?version=' + window.siteVersion,
+      access: {
+        footer: true,
+        title: "Tokyo Hackerspace"
+      }
+    })
     .when('/en/events',
     {
       templateUrl: '/assets/templates/en/events.html?version=' + window.siteVersion,
