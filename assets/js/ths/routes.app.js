@@ -4,6 +4,38 @@ var app = angular.module('thswebsite')
 app.config( ['$routeProvider', function($routeProvider)
 {
   $routeProvider
+    .when('/en/membership',
+    {
+      templateUrl: '/assets/templates/en/membership.html?version=' + window.siteVersion,
+      access: {
+        footer: true,
+        title: "Tokyo Hackerspace"
+      }
+    })
+    .when('/ja/membership',
+    {
+      templateUrl: '/assets/templates/ja/membership.html?version=' + window.siteVersion,
+      access: {
+        footer: true,
+        title: "Tokyo Hackerspace"
+      }
+    })
+    .when('/en/event/hosting',
+    {
+      templateUrl: '/assets/templates/en/event-hosting.html?version=' + window.siteVersion,
+      access: {
+        footer: true,
+        title: "Tokyo Hackerspace"
+      }
+    })
+    .when('/ja/event/hosting',
+    {
+      templateUrl: '/assets/templates/ja/event-hosting.html?version=' + window.siteVersion,
+      access: {
+        footer: true,
+        title: "Tokyo Hackerspace"
+      }
+    })
     .when('/en/access',
     {
       templateUrl: '/assets/templates/en/access.html?version=' + window.siteVersion,
@@ -31,22 +63,6 @@ app.config( ['$routeProvider', function($routeProvider)
     .when('/ja/event/:eventId/:eventTitle',
     {
       templateUrl: '/assets/templates/ja/event.html?version=' + window.siteVersion,
-      access: {
-        footer: true,
-        title: "Tokyo Hackerspace"
-      }
-    })
-    .when('/en/event/hosting',
-    {
-      templateUrl: '/assets/templates/en/event-hosting.html?version=' + window.siteVersion,
-      access: {
-        footer: true,
-        title: "Tokyo Hackerspace"
-      }
-    })
-    .when('/ja/event/hosting',
-    {
-      templateUrl: '/assets/templates/ja/event-hosting.html?version=' + window.siteVersion,
       access: {
         footer: true,
         title: "Tokyo Hackerspace"

@@ -1,7 +1,8 @@
 .navbar-brand > img {
-  width: 300px;
+  width: 275px;
   position: relative;
-  top: -40px
+  top: -40px;
+  z-index: 1000;
 }
 
 
