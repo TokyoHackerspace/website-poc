@@ -33,6 +33,7 @@
             <aside class="side-menu visible-xs visible-sm">
                 <ul class="list-unstyled">
                     <div ng-include="'/assets/templates/' + rootCtrl.pathLang + '/common/navigation.html'"></div>
+                    <div ng-include="'/assets/templates/common/lang_selector.html'"></div>
                 </ul><!-- list-unstyled -->
             </aside><!-- side-menu -->
         </nav><!-- menu -->
@@ -50,11 +51,11 @@
                     </div>
                     <div class="col-md-6">
                         <ul class="nav navbar-nav menu-right">
-
-                            <!-- Social Icons
-                            ============================================= -->
-                            <li class="social-nav"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></li>
-
+                            <li class="social-nav" ng-include="'/assets/templates/common/social_links.html'">
+                            </li>
+                            <li class="search-nav menu-item-has-children">
+                              <ul ng-include="'/assets/templates/common/lang_selector.html'"></ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
