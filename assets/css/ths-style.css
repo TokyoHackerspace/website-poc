@@ -11,6 +11,28 @@
   height: 325px !important;
 }
 
+.date-block{
+  width: 85px;
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.date-block ul {
+  border: 1px solid black;
+  color: #fff;
+  background: #000;
+  margin: 0px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.date-block li
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 
 @media screen and (max-width: 400px){
