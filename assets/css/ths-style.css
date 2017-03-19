@@ -5,6 +5,13 @@
   z-index: 1000;
 }
 
+.widgetize-area.container
+{
+  min-height: 325px !important;
+  height: 325px !important;
+}
+
+
 
 @media screen and (max-width: 400px){
   .navbar-brand > img {
