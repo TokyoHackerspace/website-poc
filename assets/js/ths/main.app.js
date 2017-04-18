@@ -51,19 +51,26 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
   $scope.$on('$routeChangeStart', function (e, next, current)
   {
     var originalPath = next.$$route.originalPath;
+    console.log("Menu: " + jQuery('body').hasClass('show-menu'));
+    console.log("Menu: " + jQuery('body').hasClass('show-menu'));
 
+    // Make sure the paths are correct
     if(originalPath == "" || originalPath == "/")
     {
       if(self.lang == 'en-US' || self.lang == 'en-GB')
       {
        self.pathLang = 'en';
       }
+
+
       $location.path('/' + self.pathLang);
+
     }
     else
     {
       self.pathLang = originalPath.substring(1,3);
     }
+
   });
 }]);
 

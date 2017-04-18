@@ -4904,6 +4904,13 @@ if (typeof jQuery === 'undefined') {
                 }
             }
         });
+        
+        $('.side-menu ul').on('click', function(ev)
+        {
+          toggleMenu();
+          
+          // return true;
+        });
     }
 
     function toggleMenu() {
