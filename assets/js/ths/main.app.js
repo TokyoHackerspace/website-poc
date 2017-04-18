@@ -17,12 +17,8 @@ var app = angular.module('thswebsite', [
 app.controller("RootController", ['$scope', '$window','$location', function($scope, $window, $location)
 {
   self = this;
-  self.lang = $window.navigator.language || $window.navigator.userLanguage;
-  self.pathLang = "en";
   self.events = [];
   
-  console.log("One: " + self.pathLang);
-
   self.languageLinks = {
     en: {
       base: "/en",
@@ -32,31 +28,43 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
       base: "/ja",
       url: ""
     }
+  };
+  
+  // Figure out the language that we are trying to use.
+  if(angular.isDefined($window.navigator.language))
+  {
+    self.lang = $window.navigator.language;
   }
+  else if(angular.isDefined($window.navigator.userLanguage))
+  {
+    self.lang = $window.navigator.userLanguage;
+  }
+  else
+  {
+    self.lang = "ja-JP";
+  }
+
+  console.log("My Browser Locale is set too: " + self.lang);
+  self.pathLang = "ja";
 
   // When we change a route we're going to do some work.
   $scope.$on('$routeChangeStart', function (e, next, current)
   {
+    var originalPath = next.$$route.originalPath;
 
-    self.originalPath = next.$$route.originalPath;
-
-    console.log(self.originalPath);
-
-    if(self.originalPath == "" || self.originalPath == "/")
+    if(originalPath == "" || originalPath == "/")
     {
-       if(self.lang == 'ja-JP')
-       {
-         self.pathLang='ja';
-       }
-       
-       $location.path('/' + self.pathLang);
+      if(self.lang == 'en-US' || self.lang == 'en-GB')
+      {
+       self.pathLang = 'en';
+      }
+      $location.path('/' + self.pathLang);
     }
     else
     {
-        self.pathLang = self.originalPath.substring(1,3);
+      self.pathLang = originalPath.substring(1,3);
     }
   });
-
 }]);
 
 app.controller("FooterController", ['$scope', '$window', function($scope, $window)
