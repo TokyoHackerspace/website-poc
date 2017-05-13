@@ -1,6 +1,6 @@
 /vendor
 /events/config.php
-/events/images
+/events/images/*.jpg
 /events/cache/*
 /events/temp
 /assets/templates/common.old

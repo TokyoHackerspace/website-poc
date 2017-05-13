@@ -1,4 +1,4 @@
-  <a ng-href="/#/{{ rootCtrl.pathLang }}/event/<?php echo urlencode($event['id']); ?>/<?php echo urlencode($event['name']); ?>"><img src="/events/images/event_image.jpg" width="570" height="373" alt="" class="img-responsive"></a><!-- img-responsive -->
+  <a ng-href="/#/{{ rootCtrl.pathLang }}/event/<?php echo urlencode($event['id']); ?>/<?php echo urlencode($event['name']); ?>"><img src="/events/images/<?php echo urlencode($event['image']); ?>" width="570" height="373" alt="" class="img-responsive"></a><!-- img-responsive -->
   <div class="post-info">
     <h2 class="entry-title"><a ng-href="/#/{{ rootCtrl.pathLang }}/event/<?php echo urlencode($event['id']); ?>/<?php echo urlencode($event['name']); ?>"><?php echo $event['name']; ?></a></h2><!-- entry-content -->
     <ul class="entry-meta list-inline">

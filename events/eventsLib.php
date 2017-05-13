@@ -12,11 +12,18 @@ use DMS\Service\Meetup\MeetupKeyAuthClient;
 try
 {
   $cache_file = BASEPATH . '/events/cache/cache_file.txt';
+  $csvFile =  BASEPATH . '/events/images/images.csv';
 
+  // If the file is readable get the contents otherwise set as empty array.
+  $fileContents = (is_readable($csvFile)) ? file($csvFile) : array();
+
+  // If the cache file is recent then get the cache.
   if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 60 * 24 ))) {
      // Cache file is less than five minutes old. 
      // Don't bother refreshing, just use the file as-is.
      $file = file_get_contents($cache_file);
+     
+  // If the cachefile is not recent the rebuild it.
   } else {
   
     // Create a client.
@@ -47,9 +54,9 @@ try
   // Decode the json back into an array
   $events = json_decode($file, true);
 
+  // If more than 10 events then we'll build an array of 10 events.
   if(count($events) > 10)
   {
-
     if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page']==""))
     {
       $page = 1;
@@ -64,17 +71,15 @@ try
     $events = $eventSlice;
   }
 
-
-
-
-
-  // print_r($events);
-  // exit();
-
-
-
-
-
+  $newEvents = array();
+  foreach($events as $event)
+  {
+    $event['image'] = getImageForEvent($event['id']);
+    $newEvents[] = $event;
+  }
+  
+  // Update the events array
+  $events = $newEvents;
 
 }
 catch (\Exception $e)
@@ -82,11 +87,13 @@ catch (\Exception $e)
   echo $e->getMessage();
 }
 
+// Tranform the meetup timestamp to a string.
 function meetupTimeToString($format, $meetupTimeStamp, $meetupOffset)
 {
   return date($format, ($meetupTimeStamp/1000) + ($meetupOffset/1000) ); 
 }
 
+// Formate the meetup event menu
 function meetupVenu($venue)
 {
   $html = $venue['name'].'<br>';
@@ -97,6 +104,26 @@ function meetupVenu($venue)
   }
   $html .= $venue['city'].'<br>';
   return $html;
+}
+
+// Get the image for the event from the csv file.
+function getImageForEvent($eventId)
+{
+  global $fileContents;
+  
+  $imageName = 'default.jpg';
+  
+  foreach($fileContents as $fileLine)
+  {
+    $csvLine = str_getcsv($fileLine, ":");
+
+    if($csvLine[1] == $eventId)
+    {
+      $imageName = $csvLine[2];
+    }
+  }
+  
+  return $imageName;
 }
 
 
