@@ -78,7 +78,7 @@ try
   $newEvents = array();
   foreach($events as $event)
   {
-    $event['image'] = getImageForEvent($event['id']);
+    $event['image'] = getImageForEvent($event['name']);
     $newEvents[] = $event;
   }
   
@@ -111,7 +111,7 @@ function meetupVenu($venue)
 }
 
 // Get the image for the event from the csv file.
-function getImageForEvent($eventId)
+function getImageForEvent($eventName)
 {
   global $fileContents;
   
@@ -120,8 +120,7 @@ function getImageForEvent($eventId)
   foreach($fileContents as $fileLine)
   {
     $csvLine = str_getcsv($fileLine, ":");
-
-    if($csvLine[1] == $eventId)
+    if($csvLine[0] == $eventName)
     {
       $imageName = $csvLine[2];
     }
