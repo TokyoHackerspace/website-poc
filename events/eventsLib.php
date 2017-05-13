@@ -71,8 +71,7 @@ try
 
     // Figure out how many pages of events we have...
     $pageCount = ceil(count($events) / $eventsPerPage);
-    
-    $eventSlice = array_slice($events, $eventsPerPage, ($eventsPerPage * $page));
+    $eventSlice = array_slice($events, ($eventsPerPage * ($page-1)), $eventsPerPage);
     $events = $eventSlice;
   }
 
