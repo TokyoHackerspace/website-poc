@@ -86,8 +86,35 @@ app.controller("EventDisplayController", ['$scope', '$routeParams','$window', fu
   self.eventTitle = $routeParams.eventTitle;
 }]);
 
-app.controller("EventsController", ['$scope', '$routeParams', function($scope, $routeParams)
+app.controller("EventsController", ['$scope', '$routeParams', '$location', function($scope, $routeParams, $location)
 {
   var self = this;
   self.page = $routeParams.page;
+  self.queryString = $location.search();
+  self.templateUrl = '/assets/templates/common/events_list.php';
+  self.queryBuild = {};
+  
+  if(self.queryString.recache == true)
+  {
+    self.queryBuild.recache = true
+  }
+  
+  if(self.page)
+  {
+    self.queryBuild.page = self.page;
+  }
+  
+  self.serialize = function(obj) {
+    var str = [];
+    for(var p in obj)
+      if (obj.hasOwnProperty(p)) {
+        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+      }
+    return str.join("&");
+  }
+
+  self.templateUrl = self.templateUrl + '?' + self.serialize(self.queryBuild);
+  
+  console.log(self.templateUrl);
+
 }]);
