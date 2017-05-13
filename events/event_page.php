@@ -57,25 +57,22 @@
                        
                         <?php // Next 3 events advertised below 
                         for($i = ($idx+1); $i < ($idx+4); $i++): ?>
-                        <div class="col-sm-4 col">
-
-                            <!-- CardView Post
-                            ============================================= -->
+                        <!-- div class="col-sm-4 col">
                             <div class="cardview-post wow zoomIn">
                                 <div class="post-thumbnails">
-                                    <a href="#"><img src="http://placehold.it/290x203" width="290" height="203" alt="" class="img-responsive"></a><!-- img-responsive -->
-                                </div><!-- post-thumbnails -->
+                                    <a href="#"><img src="http://placehold.it/290x203" width="290" height="203" alt="" class="img-responsive"></a>
+                                </div>
                                 <div class="post-info">
-                                    <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2><!-- entry-title -->
+                                    <h2 class="entry-title"><a href="#">Donec eleifend, nunc ac egestas facilisis, nunc ex feugiat odio</a></h2>
                                     <ul class="entry-meta list-inline">
                                         <li>18 July 2016</li>
-                                        <li><i class="fa fa-heart-o"></i> 13</li><!-- fa-heart-o -->
-                                        <li><i class="fa fa-eye"></i> 1,684</li><!-- fa-eye -->
-                                        <li><i class="fa fa-comment"></i> 3</li><!-- fa-comment -->
-                                    </ul><!-- entry-meta -->
-                                </div><!-- post-info -->
-                            </div><!-- cardview-post -->
-                        </div>
+                                        <li><i class="fa fa-heart-o"></i> 13</li>
+                                        <li><i class="fa fa-eye"></i> 1,684</li>
+                                        <li><i class="fa fa-comment"></i> 3</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div -->
                         <?php endfor; ?>
                     </div>
                 </div>

@@ -43,9 +43,39 @@ try
      file_put_contents($cache_file, json_encode($events, true), LOCK_EX);
      $file = file_get_contents($cache_file);
   }
-
+  
   // Decode the json back into an array
-  $events = json_decode($file,true);
+  $events = json_decode($file, true);
+
+  if(count($events) > 10)
+  {
+
+    if(!isset($_GET['page']) || (isset($_GET['page']) && $_GET['page']==""))
+    {
+      $page = 1;
+    }
+    else
+    {
+      $page = $_GET['page'];
+    }
+
+    $eventSlice = array_slice($events, 10, (10*2));
+
+    $events = $eventSlice;
+  }
+
+
+
+
+
+  // print_r($events);
+  // exit();
+
+
+
+
+
+
 }
 catch (\Exception $e)
 {

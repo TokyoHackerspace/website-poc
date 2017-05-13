@@ -85,3 +85,9 @@ app.controller("EventDisplayController", ['$scope', '$routeParams','$window', fu
   self.eventId = $routeParams.eventId;
   self.eventTitle = $routeParams.eventTitle;
 }]);
+
+app.controller("EventsController", ['$scope', '$routeParams', function($scope, $routeParams)
+{
+  var self = this;
+  self.page = $routeParams.page;
+}]);

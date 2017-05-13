@@ -4,7 +4,7 @@
       <li>Mar 15th</li>
       <li>7:00PM</li>
     </ul>  
-  </div><?php echo strip_tags($event['description']); ?></p>
+  </div><?php echo $event['description']; ?></p>
 <br>&nbsp;<br>
 
 

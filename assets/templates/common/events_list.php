@@ -1,6 +1,7 @@
 <?php
   require_once('../../../events/eventsLib.php');
 ?>
+
 <div class="regular-blog-wrap">
     <div class="container" id="scrollspy-bars">
         <div class="row">
