@@ -44,7 +44,7 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
     self.lang = "ja-JP";
   }
 
-  console.log("My Browser Locale is set too: " + self.lang);
+  console.log("My Browser Locale is set to: " + self.lang);
   self.pathLang = "ja";
 
   // When we change a route we're going to do some work.
@@ -61,7 +61,6 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
       {
        self.pathLang = 'en';
       }
-
 
       $location.path('/' + self.pathLang);
 
@@ -89,10 +88,13 @@ app.controller("EventDisplayController", ['$scope', '$routeParams','$window', fu
 app.controller("EventsController", ['$scope', '$routeParams', '$location', function($scope, $routeParams, $location)
 {
   var self = this;
+  self.root = $scope.rootCtrl;
   self.page = $routeParams.page;
   self.queryString = $location.search();
   self.templateUrl = '/assets/templates/common/events_list.php';
-  self.queryBuild = {};
+  self.queryBuild = {
+    pathLang: self.root.pathLang
+  };
   
   if(self.queryString.recache == true)
   {
@@ -113,8 +115,7 @@ app.controller("EventsController", ['$scope', '$routeParams', '$location', funct
     return str.join("&");
   }
 
+  console.log(self.queryBuild);
   self.templateUrl = self.templateUrl + '?' + self.serialize(self.queryBuild);
-  
-  console.log(self.templateUrl);
 
 }]);

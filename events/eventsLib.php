@@ -13,6 +13,8 @@ try
 {
   $cache_file = BASEPATH . '/events/cache/cache_file.txt';
   $csvFile =  BASEPATH . '/events/images/images.csv';
+  $eventsPerPage = 10;
+  $pathLang = $_GET['pathLang'];
 
   // If the file is readable get the contents otherwise set as empty array.
   $fileContents = (is_readable($csvFile)) ? file($csvFile) : array();
@@ -67,9 +69,11 @@ try
       $page = $_GET['page'];
     }
 
-    // $eventSlice = array_slice($events, 10, (10*2));
-    //
-    // $events = $eventSlice;
+    // Figure out how many pages of events we have...
+    $pageCount = ceil(count($events) / $eventsPerPage);
+    
+    $eventSlice = array_slice($events, $eventsPerPage, ($eventsPerPage * $page));
+    $events = $eventSlice;
   }
 
   $newEvents = array();
