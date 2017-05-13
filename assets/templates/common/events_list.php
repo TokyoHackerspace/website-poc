@@ -9,6 +9,13 @@
               <h3>Events List</h3>
               <div class="row">
                 <div class="col-md-12">
+                  <div class="description" ng-include="'assets/templates/en/event_headline_description.html'"></div>
+                  &nbsp;
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
                   <?php foreach($events as $event)
                         {
                           include(BASEPATH . '/events/templates/event_list_section.php');

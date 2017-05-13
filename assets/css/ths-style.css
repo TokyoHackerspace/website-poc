@@ -1,7 +1,11 @@
+.logo-advert {
+  height: 120px !important;
+}
+
 .navbar-brand > img {
   width: 265px;
   position: relative;
-  top: -40px;
+  top: -20px; /*when advertisement is in place top is -40 */
   z-index: 1000;
 }
 

@@ -67,9 +67,9 @@ try
       $page = $_GET['page'];
     }
 
-    $eventSlice = array_slice($events, 10, (10*2));
-
-    $events = $eventSlice;
+    // $eventSlice = array_slice($events, 10, (10*2));
+    //
+    // $events = $eventSlice;
   }
 
   $newEvents = array();
