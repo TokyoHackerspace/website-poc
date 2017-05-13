@@ -18,7 +18,8 @@ try
   $fileContents = (is_readable($csvFile)) ? file($csvFile) : array();
 
   // If the cache file is recent then get the cache.
-  if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 60 * 24 ))) {
+  if ((!isset($_GET['recache'])) && (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 60 * 24 ))))
+  {
      // Cache file is less than five minutes old. 
      // Don't bother refreshing, just use the file as-is.
      $file = file_get_contents($cache_file);
