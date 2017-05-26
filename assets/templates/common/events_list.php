@@ -36,7 +36,7 @@
             </div><!-- nav-links -->
           </nav>
         </div>
-        <div class="col-lg-3 col-sm-4 fix-top-mobile"  ng-include="'/assets/templates/common/sidebar.html'"></div>
+        <!-- div class="col-lg-3 col-sm-4 fix-top-mobile"  ng-include="'/assets/templates/common/sidebar.html'"></div -->
       </div>
   </div>
 </div>

@@ -76,32 +76,30 @@
                         <?php endfor; ?>
                     </div>
                 </div>
-
                 
                 <!-- sidebar starts here -->
                 <div class="col-lg-3 col-md-3 col-sm-4 fix-top-mobile">
-                  
-                    <!-- Widget Advertisement
-                    ============================================= -->
+                  <!-- 
                     <aside class="widget widget-advert wow jello">
                         <div class="widget-title-wrap">
-                            <span class="widget-title">Advertisement</span><!-- widget-title -->
-                        </div><!-- widget-title-wrap -->
+                            <span class="widget-title">Advertisement</span>
+                        </div>
                         <a href="#"><img width="250" height="250" src="http://placehold.it/250x250/cecece?text=Ad+(250x250)" class="img-responsive" alt=""></a>
-                    </aside><!-- widget -->
+                    </aside>
 
                     <aside class="widget widget-feedburner wow slideInRight">
                         <div class="widget-title-wrap">
-                            <span class="widget-title">Subscribe Email</span><!-- widget-title -->
-                        </div><!-- widget-title-wrap -->
+                            <span class="widget-title">Subscribe Email</span>
+                        </div>
                         <p>We will not sell, trade, share or rent your email address.</p>
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email Address"><!-- form-control -->
-                            </div><!-- form-group -->
-                            <button class="btn btn-light-brown"><i class="fa fa-send"></i> Subscribe</button><!-- btn-light-brown -->
+                                <input type="text" class="form-control" placeholder="Email Address">
+                            </div>
+                            <button class="btn btn-light-brown"><i class="fa fa-send"></i> Subscribe</button>
                         </form>
-                    </aside><!-- widget -->
+                    </aside>
+                  -->
                 </div>
             </div>
         </div>

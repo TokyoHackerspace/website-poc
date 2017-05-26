@@ -14,7 +14,7 @@ try
   $cache_file = BASEPATH . '/events/cache/cache_file.txt';
   $csvFile =  BASEPATH . '/events/images/images.csv';
   $eventsPerPage = 10;
-  $pathLang = isset($_GET['pathLang']);
+  $pathLang = (isset($_GET['pathLang'])) ? $_GET['pathLang'] : "ja";
 
   // If the file is readable get the contents otherwise set as empty array.
   $fileContents = (is_readable($csvFile)) ? file($csvFile) : array();
