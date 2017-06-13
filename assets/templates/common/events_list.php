@@ -21,6 +21,7 @@
                       include(BASEPATH . '/events/templates/event_list_section.php');
                     }
               ?>
+              <hr style="border: 1px solid black !important; ">
             </div>
           </div>
           <nav class="navigation pagination">
