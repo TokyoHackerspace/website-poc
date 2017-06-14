@@ -14,7 +14,7 @@ var app = angular.module('thswebsite', [
   'ngRoute',
 ]);
 
-app.controller("RootController", ['$scope', '$window','$location','$anchorScroll', function($scope, $window, $location, $anchorScroll)
+app.controller("RootController", ['$scope', '$window','$location','$window', function($scope, $window, $location, $window)
 {
   self = this;
   self.events = [];
@@ -46,6 +46,11 @@ app.controller("RootController", ['$scope', '$window','$location','$anchorScroll
 
   console.log("My Browser Locale is set to: " + self.lang);
   self.pathLang = "ja";
+  
+  self.gotoTop = function()
+  {
+    $window.scrollTo(0, 0);
+  }
 
   // When we change a route we're going to do some work.
   $scope.$on('$routeChangeStart', function (e, next, current)
@@ -71,13 +76,7 @@ app.controller("RootController", ['$scope', '$window','$location','$anchorScroll
     }
 
   });
-  
-  self.gotoTop = function()
-  {
-    $location.hash('top');
-    // call $anchorScroll()
-    $anchorScroll();
-  }
+
 }]);
 
 app.controller("FooterController", ['$scope', '$window', function($scope, $window)
