@@ -14,7 +14,7 @@ var app = angular.module('thswebsite', [
   'ngRoute',
 ]);
 
-app.controller("RootController", ['$scope', '$window','$location', function($scope, $window, $location)
+app.controller("RootController", ['$scope', '$window','$location','$anchorScroll', function($scope, $window, $location, $anchorScroll)
 {
   self = this;
   self.events = [];
@@ -71,6 +71,13 @@ app.controller("RootController", ['$scope', '$window','$location', function($sco
     }
 
   });
+  
+  self.gotoTop = function()
+  {
+    $location.hash('top');
+    // call $anchorScroll()
+    $anchorScroll();
+  }
 }]);
 
 app.controller("FooterController", ['$scope', '$window', function($scope, $window)
