@@ -26,7 +26,9 @@
           </div>
           <nav class="navigation pagination">
             <div class="nav-links">
-              <?php for($i = 1; $i <= $pageCount; $i++): ?>
+              <?php 
+                 $pageCount = 0;
+		for($i = 1; $i <= $pageCount; $i++): ?>
                 <?php if($i == $page): ?>
                 <span class="page-numbers current"><span class="meta-nav screen-reader-text">Page </span><?php echo $i ?></span>
                 <?php else: ?>

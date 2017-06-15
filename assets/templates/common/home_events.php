@@ -7,6 +7,11 @@
   {
     global $eventCount;
     global $events;
+
+    if(count($events) == 0 )
+    {
+      return -1;
+    }
     return $events[$eventCount++];
   }
   
@@ -17,7 +22,10 @@
           <div class="col-sm-6">
             <?php 
               $event = get_next_event();
-              include(BASEPATH . '/events/templates/event_tile_large.php');
+              if($event != -1)
+              {
+                include(BASEPATH . '/events/templates/event_tile_large.php');
+              }
             ?>
           </div>
           <div class="col-sm-6">
@@ -25,13 +33,19 @@
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
             </div>
@@ -39,13 +53,19 @@
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
             </div>
@@ -57,13 +77,19 @@
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
             </div>
@@ -73,13 +99,19 @@
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
               <div class="col-sm-6">
                 <?php 
                   $event = get_next_event();
-                  include(BASEPATH . '/events/templates/event_tile_small.php');
+                  if($event != -1)
+                  {
+                    include(BASEPATH . '/events/templates/event_tile_small.php');
+                  }
                 ?>
               </div>
             </div>
